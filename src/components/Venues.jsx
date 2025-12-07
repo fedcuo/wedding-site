@@ -1,24 +1,24 @@
-import React from 'react';
-import { Church, UtensilsCrossed } from 'lucide-react';
+import React from "react";
+import { Church, UtensilsCrossed } from "lucide-react";
 
 export const Venues = () => {
   const venues = [
     {
       icon: <Church className="w-10 h-10" />,
-      title: 'Cerimonia',
-      time: 'Ore 15:00',
-      name: 'Chiesa di San Francesco',
-      address: 'Via della Libertà, 45',
-      city: '50100 Firenze'
+      title: "Cerimonia",
+      time: "Ore 11:00",
+      name: "Chiesa Madre di San Felice in Pincis",
+      address: "Via Abate Felice Toscano, 2",
+      city: "80038 Pomigliano d'Arco (NA)",
     },
     {
       icon: <UtensilsCrossed className="w-10 h-10" />,
-      title: 'Ricevimento',
-      time: 'Ore 19:00',
-      name: 'Villa Toscana',
-      address: 'Via dei Colli, 12',
-      city: '50125 Firenze'
-    }
+      title: "Ricevimento",
+      time: "Ore 13:00",
+      name: "Casale dei Baroni",
+      address: "Viale Tenente Alberto Puoti, 29",
+      city: "81028 Santa Maria a Vico (CE)",
+    },
   ];
 
   return (
@@ -45,14 +45,20 @@ export const Venues = () => {
             </div>
             <address className="not-italic text-charcoal leading-relaxed">
               <strong className="block mb-1">{venue.name}</strong>
-              {venue.address}<br />
+              {venue.address}
+              <br />
               {venue.city}
             </address>
           </div>
         ))}
-        
+
         <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
-          <svg width="120" height="80" viewBox="0 0 120 80" className="opacity-30">
+          <svg
+            width="120"
+            height="80"
+            viewBox="0 0 120 80"
+            className="opacity-30"
+          >
             <path
               d="M 10 40 Q 35 20, 60 40 T 110 40"
               stroke="#D4AF37"
@@ -73,7 +79,9 @@ export const Venues = () => {
             <circle cx="30" cy="30" r="2" fill="#C41E3A" opacity="0.4" />
             <circle cx="60" cy="40" r="2.5" fill="#165B33" opacity="0.5" />
             <circle cx="90" cy="30" r="2" fill="#C41E3A" opacity="0.4" />
-            <text x="55" y="25" fontSize="12" fill="#D4AF37" opacity="0.6">♥</text>
+            <text x="55" y="25" fontSize="12" fill="#D4AF37" opacity="0.6">
+              ♥
+            </text>
           </svg>
         </div>
       </div>
