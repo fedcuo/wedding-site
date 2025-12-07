@@ -1,5 +1,5 @@
 import React from "react";
-import { Church, UtensilsCrossed } from "lucide-react";
+import { Church, UtensilsCrossed, Navigation } from "lucide-react";
 
 export const Venues = () => {
   const venues = [
@@ -10,6 +10,7 @@ export const Venues = () => {
       name: "Chiesa Madre di San Felice in Pincis",
       address: "Via Abate Felice Toscano, 2",
       city: "80038 Pomigliano d'Arco (NA)",
+      mapsUrl: "https://maps.app.goo.gl/uCgwJzbc1NYVAADk7",
     },
     {
       icon: <UtensilsCrossed className="w-10 h-10" />,
@@ -18,8 +19,13 @@ export const Venues = () => {
       name: "Casale dei Baroni",
       address: "Viale Tenente Alberto Puoti, 29",
       city: "81028 Santa Maria a Vico (CE)",
+      mapsUrl: "https://maps.app.goo.gl/cBW8HxGgvr7QNQqcA",
     },
   ];
+
+  const openMaps = (url) => {
+    window.open(url, "_blank");
+  };
 
   return (
     <section className="max-w-5xl mx-auto px-4 py-20">
@@ -49,6 +55,16 @@ export const Venues = () => {
               <br />
               {venue.city}
             </address>
+
+            {/* Navigation Button - Small Bottom Right */}
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={() => openMaps(venue.mapsUrl)}
+                className="bg-christmas-green text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-christmas-red transition-all duration-300 flex items-center gap-2 group/btn hover:scale-105"
+              >
+                <Navigation className="w-4 h-4 group-hover/btn:rotate-12 transition-transform" />
+              </button>
+            </div>
           </div>
         ))}
 
