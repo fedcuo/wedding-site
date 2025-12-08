@@ -49,7 +49,7 @@ export const RSVP = () => {
   };
 
   return (
-    <section className="bg-white py-20 px-4">
+    <section className="bg-gradient-to-br from-cream to-[#F0EBE3] py-20 px-4">
       <div className="max-w-2xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl text-christmas-green text-center mb-4">
           Conferma la Tua Presenza

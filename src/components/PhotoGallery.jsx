@@ -43,68 +43,42 @@ export const PhotoGallery = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-cream to-[#FFE8E8] py-20 px-4">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="font-serif text-4xl md:text-5xl text-christmas-green text-center mb-4">
+    <section className="bg-white py-20 px-4">
+      <div className="max-w-2xl mx-auto text-center">
+        <h2 className="font-serif text-4xl md:text-5xl text-christmas-green mb-4">
           Condividi i Tuoi Ricordi
         </h2>
         <div className="w-16 h-0.5 bg-gold mx-auto mb-12"></div>
 
-        <p className="text-center text-lg text-charcoal mb-12 max-w-2xl mx-auto leading-relaxed">
-          Il nostro matrimonio sarà ancora più speciale con i vostri scatti!
+        <p className="font-serif text-xl md:text-2xl text-charcoal mb-6 leading-relaxed italic">
+          Il nostro matrimonio sarà ancora più speciale con i vostri scatti.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {[
-            {
-              icon: <Camera className="w-12 h-12" />,
-              title: "Scatta",
-              text: "Cattura i momenti speciali",
-            },
-            {
-              icon: <Cloud className="w-12 h-12" />,
-              title: "Carica",
-              text: "Aggiungi le tue foto",
-            },
-            {
-              icon: <Heart className="w-12 h-12" />,
-              title: "Ricorda",
-              text: "Rivivi ogni istante",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1 text-center"
-            >
-              <div className="text-christmas-red mb-4 flex justify-center">
-                {item.icon}
-              </div>
-              <h3 className="font-serif text-2xl text-christmas-green mb-2">
-                {item.title}
-              </h3>
-              <p className="text-charcoal text-sm">{item.text}</p>
-            </div>
-          ))}
-        </div>
+        <p className="text-base md:text-lg text-charcoal/70 mb-12 leading-relaxed">
+          Catturate ogni momento della giornata e condividetelo nel nostro album
+          condiviso. Ogni ricordo attraverso i vostri occhi è prezioso.
+        </p>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        {/* Pulsanti eleganti */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
           <button
             onClick={openPhotoAlbum}
-            className="bg-christmas-red text-white px-8 py-4 rounded-full font-medium hover:bg-[#D4324D] transition-all hover:scale-105 hover:shadow-xl flex items-center gap-3"
+            className="bg-christmas-green text-white px-8 py-4 rounded-full font-medium hover:bg-christmas-red transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
           >
-            <Upload className="w-6 h-6" />
+            <Upload className="w-5 h-5" />
             Carica le Tue Foto
           </button>
           <button
             onClick={openPhotoAlbum}
-            className="bg-white text-christmas-green border-2 border-christmas-green px-8 py-4 rounded-full font-medium hover:bg-christmas-green hover:text-white transition-all hover:scale-105 flex items-center gap-3"
+            className="bg-white text-christmas-green border-2 border-christmas-green px-8 py-4 rounded-full font-medium hover:bg-christmas-green hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
           >
-            <Image className="w-6 h-6" />
+            <Image className="w-5 h-5" />
             Vedi Tutte le Foto
           </button>
         </div>
       </div>
 
+      {/* Modal - INVARIATO */}
       {showModal && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4">
           <div
@@ -116,7 +90,7 @@ export const PhotoGallery = () => {
                 setPassword("");
                 setError("");
               }}
-              className="absolute top-4 right-4 text-gray-400 hover:text-charcoal"
+              className="absolute top-4 right-4 text-gray-400 hover:text-charcoal transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
@@ -136,7 +110,7 @@ export const PhotoGallery = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 autoFocus
-                className="w-full p-4 border-2 border-gray-200 rounded-xl text-center font-mono text-lg tracking-widest focus:border-christmas-green focus:outline-none"
+                className="w-full p-4 border-2 border-gray-200 rounded-xl text-center font-mono text-lg tracking-widest focus:border-christmas-green focus:outline-none transition-colors"
               />
               {error && (
                 <p className="text-christmas-red text-center font-medium">
