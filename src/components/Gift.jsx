@@ -3,7 +3,7 @@ import { Copy, Check } from "lucide-react";
 
 export const Gift = () => {
   const [copied, setCopied] = useState(false);
-  const iban = "IT03X0306940074100000090198";
+  const iban = "IT03X03069400741000000xxxxx";
   const accountHolder = "Federico Cuozzo";
 
   const copyIban = () => {
